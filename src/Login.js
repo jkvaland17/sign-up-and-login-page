@@ -10,7 +10,7 @@ const Login = () => {
     loginData.push(Useremail, Userpass);
     // stored data from the SignUp-form
     let listData = localStorage.getItem("list");
-    //convert text into a JavaScript string to object
+    //store and convert text into a JavaScript string to object
     let oldData = JSON.parse(listData);
 
     // check if stored data from register-form is equal to data from login form
@@ -33,7 +33,6 @@ const Login = () => {
         <input
           type="email"
           placeholder="Enter Email Id"
-          
           value={Useremail}
           onChange={(e) => setUserEmail(e.target.value)}
         />

@@ -26,7 +26,9 @@ const SignUp = () => {
       {/* Signup Page Start */}
       <div>
         <h1>Signup pages</h1>
-        <label>Name : </label>
+        <label>
+          Name<span className="mandetory">*</span>
+        </label>
         <br />
         <input
           type="text"
@@ -36,7 +38,9 @@ const SignUp = () => {
           required
         ></input>
         <br />
-        <label>Email : </label>
+        <label>
+          Email<span className="mandetory">*</span>{" "}
+        </label>
         <br />
         <input
           type="email"
@@ -46,7 +50,9 @@ const SignUp = () => {
           required
         ></input>
         <br />
-        <label>Password : </label>
+        <label>
+          Password<span className="mandetory">*</span>
+        </label>
         <br />
         <input
           type="password"

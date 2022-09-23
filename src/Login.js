@@ -1,4 +1,4 @@
-
+//The first element is the initial state and the second one is a function that is used for updating the state.
 import React, { useState } from "react";
 
 const Login = () => {
@@ -10,9 +10,8 @@ const Login = () => {
     loginData.push(Useremail, Userpass);
     // stored data from the SignUp-form
     let listData = localStorage.getItem("list");
+    //convert text into a JavaScript string to object
     let oldData = JSON.parse(listData);
-    // console.log(loginData);
-    // console.log(oldData);
 
     // check if stored data from register-form is equal to data from login form
     if (oldData[1] === loginData[0] && oldData[2] === loginData[1]) {
@@ -27,6 +26,10 @@ const Login = () => {
       {/* Login Page Start */}
       <div>
         <h1>Login Page</h1>
+        <label>
+          Email<span className="mandetory">*</span>{" "}
+        </label>
+        <br />
         <input
           type="email"
           placeholder="Enter Email Id"
@@ -34,6 +37,10 @@ const Login = () => {
           value={Useremail}
           onChange={(e) => setUserEmail(e.target.value)}
         />
+        <br />
+        <label>
+          Password<span className="mandetory">*</span>
+        </label>
         <br />
         <input
           type="password"
@@ -50,4 +57,4 @@ const Login = () => {
   );
 };
 
-export default Login
+export default Login;

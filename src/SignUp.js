@@ -5,7 +5,8 @@ const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-  const [submitted, setSubmitted] = useState([]);
+  //All Data value push submitted
+  const submitted = [];
 
   const handleSubmit = (e) => {
     //entered value push submitted
@@ -20,34 +21,13 @@ const SignUp = () => {
   };
   //SignUp Form End
 
-  //login Form
-  const [Useremail, setUserEmail] = useState("");
-  const [Userpass, setUserPass] = useState("");
-  const [loginData, setloginData] = useState([]);
-
-  const check = () => {
-    loginData.push(Useremail, Userpass);
-    // stored data from the SignUp-form
-    let listData = localStorage.getItem("list");
-    let oldData = JSON.parse(listData);
-    console.log(loginData);
-    console.log(oldData);
-
-    // check if stored data from register-form is equal to data from login form
-    if (oldData[1] === loginData[0] && oldData[2] === loginData[1]) {
-      alert("You are loged in.");
-    } else {
-      alert("Wrong Username and Password");
-    }
-  };
-  //login Form End
-
   return (
     <>
       {/* Signup Page Start */}
       <div>
         <h1>Signup pages</h1>
         <label>Name : </label>
+        <br />
         <input
           type="text"
           placeholder="Enter Name"
@@ -57,6 +37,7 @@ const SignUp = () => {
         ></input>
         <br />
         <label>Email : </label>
+        <br />
         <input
           type="email"
           placeholder="Enter Email"
@@ -66,6 +47,7 @@ const SignUp = () => {
         ></input>
         <br />
         <label>Password : </label>
+        <br />
         <input
           type="password"
           placeholder="Enter Password"
@@ -79,28 +61,6 @@ const SignUp = () => {
         </button>
       </div>
       {/* Signup Page Eng */}
-      {/* ------------------------------------------------------------------------------------- */}
-      {/* Login Page Start */}
-      <div>
-        <input
-          type="email"
-          placeholder="Enter Email Id"
-          required
-          value={Useremail}
-          onChange={(e) => setUserEmail(e.target.value)}
-        />
-        <br />
-        <input
-          type="password"
-          required
-          placeholder="Enter Password"
-          value={Userpass}
-          onChange={(e) => setUserPass(e.target.value)}
-        />
-        <br />
-        <input type="submit" value="Login" onClick={check} />
-      </div>
-      {/* Login Page End */}
     </>
   );
 };

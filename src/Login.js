@@ -33,7 +33,7 @@ const Login = () => {
         <input
           type="email"
           placeholder="Enter Email Id"
-          required
+          
           value={Useremail}
           onChange={(e) => setUserEmail(e.target.value)}
         />

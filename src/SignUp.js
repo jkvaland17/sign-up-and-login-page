@@ -25,46 +25,45 @@ const SignUp = () => {
     <>
       {/* Signup Page Start */}
       <div>
-        <h1>Signup pages</h1>
-        <label>
-          Name<span className="mandetory">*</span>
-        </label>
-        <br />
-        <input
-          type="text"
-          placeholder="Enter Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        ></input>
-        <br />
-        <label>
-          Email<span className="mandetory">*</span>{" "}
-        </label>
-        <br />
-        <input
-          type="email"
-          placeholder="Enter Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        ></input>
-        <br />
-        <label>
-          Password<span className="mandetory">*</span>
-        </label>
-        <br />
-        <input
-          type="password"
-          placeholder="Enter Password"
-          value={pass}
-          onChange={(e) => setPass(e.target.value)}
-          required
-        ></input>
-        <br />
-        <button type="submit" onClick={handleSubmit}>
-          Submit
-        </button>
+        <form>
+          <h1>Signup pages</h1>
+          <label>
+            Name<span className="mandetory">*</span>
+          </label>
+          <br />
+          <input
+            type="text"
+            placeholder="Enter Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          ></input>
+          <br />
+          <label>
+            Email<span className="mandetory">*</span>{" "}
+          </label>
+          <br />
+          <input
+            type="email"
+            placeholder="Enter Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          ></input>
+          <br />
+          <label>
+            Password<span className="mandetory">*</span>
+          </label>
+          <br />
+          <input
+            type="password"
+            placeholder="Enter Password"
+            value={pass}
+            onChange={(e) => setPass(e.target.value)}
+          ></input>
+          <br />
+          <button type="submit" onClick={handleSubmit}>
+            Submit
+          </button>
+        </form>
       </div>
       {/* Signup Page Eng */}
     </>

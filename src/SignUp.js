@@ -65,7 +65,7 @@ const SignUp = () => {
           </button>
         </form>
       </div>
-      {/* Signup Page Eng */}
+      {/* Signup Page Eng  */}
     </>
   );
 };

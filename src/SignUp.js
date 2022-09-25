@@ -1,16 +1,18 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const SignUp = () => {
   //SignUp Form
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const [submitted, setSubmitted] = useState([]);
   //All Data value push submitted
-  const submitted = [];
+  // let submitted = [];
 
   const handleSubmit = (e) => {
     //entered value push submitted
-    submitted.push(name, email, pass);
+    submitted.push({ Name: name ,  Email: email ,  Password: pass });
     e.preventDefault();
     //submitted value store localStorage
     localStorage.setItem("list", JSON.stringify(submitted));
@@ -18,6 +20,7 @@ const SignUp = () => {
     setName("");
     setEmail("");
     setPass("");
+    setSubmitted([...submitted]);
   };
   //SignUp Form End
 
@@ -39,7 +42,7 @@ const SignUp = () => {
           ></input>
           <br />
           <label>
-            Email<span className="mandetory">*</span>{" "}
+            Email<span className="mandetory">*</span>
           </label>
           <br />
           <input
@@ -63,6 +66,9 @@ const SignUp = () => {
           <button type="submit" onClick={handleSubmit}>
             Submit
           </button>
+          <h4>
+            Back To <NavLink to="/">Login</NavLink>
+          </h4>
         </form>
       </div>
       {/* Signup Page Eng  */}

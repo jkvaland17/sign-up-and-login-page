@@ -9,23 +9,11 @@ const Login = () => {
 
   const check = () => {
     loginData.push(Useremail, Userpass);
-    console.log("login", loginData);
     // stored data from the SignUp-form
     let listData = localStorage.getItem("list");
-    //store and convert text into a JavaScript string to object
-    // let oldData = JSON.parse(listData);
-    // console.log("old", oldData);
-
     // check if stored data from register-form is equal to data from login form
-    // if (
-    //   oldData["Email"] === loginData &&
-    //   oldData["Password"] === loginData
-    // ) {
-    //   alert("you are successfully logged in");
-    // } else {
-    //   alert("Sorry! Wrong Username and Password");
-    // }
     if (listData && listData.length) {
+      //store and convert text into a JavaScript string to object
       let oldData = JSON.parse(listData);
       const userlogin = oldData.filter((el, k) => {
         return el.Email === Useremail && el.Password === Userpass;
@@ -34,7 +22,6 @@ const Login = () => {
         alert("invelid");
       } else {
         alert("you are successfully logged in");
-        localStorage.setItem("user_login", JSON.stringify(userlogin));
       }
     }
   };
@@ -61,7 +48,6 @@ const Login = () => {
         <br />
         <input
           type="password"
-          required
           placeholder="Enter Password"
           value={Userpass}
           onChange={(e) => setUserPass(e.target.value)}

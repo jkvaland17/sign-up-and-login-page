@@ -1,4 +1,3 @@
-//The first element is the initial state and the second one is a function that is used for updating the state.
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
@@ -15,16 +14,19 @@ const Login = () => {
     if (listData && listData.length) {
       //store and convert text into a JavaScript string to object
       let oldData = JSON.parse(listData);
-      const userlogin = oldData.filter((el, k) => {
+      //entered useremail and userpass filtered oldData
+      const userlogin = oldData.filter((el) => {
         return el.Email === Useremail && el.Password === Userpass;
       });
-
       if (userlogin.length === 0) {
         alert("Sorry!, please enter the correct email and password");
       } else {
         alert("you are successfully logged in");
       }
     }
+    //after login writed data empty
+    setUserEmail("");
+    setUserPass("");
   };
   //login Form End
   return (

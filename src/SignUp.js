@@ -9,12 +9,12 @@ const SignUp = () => {
   //All Data value push submitted
   const [submitted, setSubmitted] = useState([]);
 
-
   const handleSubmit = (e) => {
     //entered value push submitted
     submitted.push({ Name: name, Email: email, Password: pass });
+    // default behaviour change .button click page default.page not refreshin.
     e.preventDefault();
-    //submitted value store localStorage
+    //convert object to string convert
     localStorage.setItem("list", JSON.stringify(submitted));
     //After submit button click value erase
     setName("");

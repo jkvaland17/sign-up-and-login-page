@@ -6,13 +6,13 @@ const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-  const [submitted, setSubmitted] = useState([]);
   //All Data value push submitted
-  // let submitted = [];
+  const [submitted, setSubmitted] = useState([]);
+
 
   const handleSubmit = (e) => {
     //entered value push submitted
-    submitted.push({ Name: name ,  Email: email ,  Password: pass });
+    submitted.push({ Name: name, Email: email, Password: pass });
     e.preventDefault();
     //submitted value store localStorage
     localStorage.setItem("list", JSON.stringify(submitted));
@@ -20,6 +20,7 @@ const SignUp = () => {
     setName("");
     setEmail("");
     setPass("");
+    //update new list
     setSubmitted([...submitted]);
   };
   //SignUp Form End

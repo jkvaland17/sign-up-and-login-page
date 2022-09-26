@@ -5,21 +5,22 @@ import { NavLink } from "react-router-dom";
 const Login = () => {
   const [Useremail, setUserEmail] = useState("");
   const [Userpass, setUserPass] = useState("");
+  // All Data value push submitted
   const loginData = [];
 
   const check = () => {
     loginData.push(Useremail, Userpass);
-    // stored data from the SignUp-form
+    // get data from the SignUp-form
     let listData = localStorage.getItem("list");
-    // check if stored data from register-form is equal to data from login form
     if (listData && listData.length) {
       //store and convert text into a JavaScript string to object
       let oldData = JSON.parse(listData);
       const userlogin = oldData.filter((el, k) => {
         return el.Email === Useremail && el.Password === Userpass;
       });
+
       if (userlogin.length === 0) {
-        alert("invelid");
+        alert("Sorry!, please enter the correct email and password");
       } else {
         alert("you are successfully logged in");
       }

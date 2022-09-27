@@ -4,7 +4,20 @@
 
 .center {
   margin: auto;
-  width: 50%;
-  border: 3px solid green;
+  width: 30%;
+  border: 3px solid cadetblue;
   padding: 10px;
+  border-radius: 10px;
+  background-color: aliceblue;
+  
 }
+.btn{
+transition: 0.3s linear;
+cursor: pointer;
+border: none;
+border-radius: 0.3rem;
+background-color: cadetblue;
+padding: 0.5rem 2rem;
+}
+.btn:hover{transform: translateY(-3px);
+	background: #e7e7e7;}

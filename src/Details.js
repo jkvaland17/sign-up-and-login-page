@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink, useParams } from "react-router-dom";
 const Details = () => {
+  //returns an object of value current URL that were matched by the <Route path>
   let { Useremail } = useParams();
   // get data from the SignUp-form
   let listData = localStorage.getItem("list");
@@ -10,11 +11,13 @@ const Details = () => {
   const personDetails = oldData.filter((el) => {
     return el.Email === Useremail;
   });
-  //console.log("filter", userlogin);
+
+  //button start
   //logout button function
   const logout = () => {
     alert("You have successfully logged out!");
   };
+  //button End
   return (
     <div className="center">
       {/* Then the data of 0 index also goes in the filtered data and the name is
@@ -22,7 +25,9 @@ const Details = () => {
       <h3>Name: {personDetails[0].Name}</h3>
       <h3>Email Id: {Useremail}</h3>
       <NavLink to="/">
-        <button onClick={logout}>Logout</button>
+        <button className="btn" onClick={logout}>
+          Logout
+        </button>
       </NavLink>
     </div>
   );

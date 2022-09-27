@@ -14,7 +14,7 @@ const SignUp = () => {
     submitted.push({ Name: name, Email: email, Password: pass });
     // default behaviour change .button click page default.page not refreshin.
     e.preventDefault();
-    //convert object to string convert
+    //convert object to string 
     localStorage.setItem("list", JSON.stringify(submitted));
     //After submit button click value erase
     setName("");

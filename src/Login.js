@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [Useremail, setUserEmail] = useState("");
   const [Userpass, setUserPass] = useState("");
   // All Data value push submitted
   const loginData = [];
+  // Accessing the history instance created by React
+  const navigate = useNavigate();
 
+  //check function
   const check = () => {
     loginData.push(Useremail, Userpass);
     // get data from the SignUp-form
@@ -27,6 +30,8 @@ const Login = () => {
     //after login writed data empty
     setUserEmail("");
     setUserPass("");
+    //navigate details page
+    navigate(`/details/${Useremail}`);
   };
   //login Form End
   return (
@@ -56,7 +61,8 @@ const Login = () => {
           onChange={(e) => setUserPass(e.target.value)}
         />
         <br />
-        <input type="submit" value="Login" onClick={check} />
+          <input type="submit" value="Login" onClick={check} />
+
         <h4>
           Not a member ?<NavLink to="/signup"> Signup now</NavLink>
         </h4>

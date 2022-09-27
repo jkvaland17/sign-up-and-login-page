@@ -1,7 +1,9 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Login from "./Login";
 import SignUp from "./SignUp";
-import { Routes, Route } from "react-router-dom";
+import Details from "./Details";
+
 
 const App = () => {
   return (
@@ -9,6 +11,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
+        <Route path="/details/:Useremail" element={<Details />}></Route>
       </Routes>
     </>
   );

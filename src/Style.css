@@ -9,15 +9,15 @@
   padding: 10px;
   border-radius: 10px;
   background-color: aliceblue;
-  
 }
-.btn{
-transition: 0.3s linear;
-cursor: pointer;
-border: none;
-border-radius: 0.3rem;
-background-color: cadetblue;
-padding: 0.5rem 2rem;
+.btn {
+  transition: 0.3s linear;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: cadetblue;
+  padding: 0.5rem 2rem;
 }
-.btn:hover{transform: translateY(-3px);
-	background: #e7e7e7;}
+.btn:hover {
+  transform: translateY(-3px);
+}

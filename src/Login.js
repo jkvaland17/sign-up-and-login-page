@@ -1,37 +1,39 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = (props) => {
   const [Useremail, setUserEmail] = useState("");
   const [Userpass, setUserPass] = useState("");
   // All Data value push submitted
   const loginData = [];
-  // Accessing the history instance created by React
+  // Accessing the history instance
   const navigate = useNavigate();
 
   //check function
   const check = () => {
-    loginData.push(Useremail, Userpass);
+    loginData.push({ Useremail, Userpass });
     // get data from the SignUp-form
     let listData = localStorage.getItem("list");
+
     if (listData && listData.length) {
       //store and convert text into a JavaScript string to object
       let oldData = JSON.parse(listData);
       //entered useremail and userpass filtered oldData
-      const userlogin = oldData.filter((el) => {
+      let userlogin = oldData.filter((el) => {
         return el.Email === Useremail && el.Password === Userpass;
       });
+      let id = userlogin[0].Id;
       if (userlogin.length === 0) {
         alert("Sorry!, please enter the correct email and password");
       } else {
         alert("you are successfully logged in");
+        navigate(`/details/${id}`);
       }
     }
     //after login writed data empty
     setUserEmail("");
     setUserPass("");
     //navigate details page
-    navigate(`/details/${Useremail}`);
   };
   //login Form End
   return (
@@ -61,13 +63,12 @@ const Login = () => {
           onChange={(e) => setUserPass(e.target.value)}
         />
         <br />
-          <input type="submit" value="Login" onClick={check} />
+        <input type="submit" value="Login" onClick={check} />
 
         <h4>
-          Not a member ?<NavLink to="/signup"> Signup now</NavLink>
+          Not a member ?<NavLink to="/signup">Signup now</NavLink>
         </h4>
       </div>
-
       {/* Login Page End */}
     </>
   );

@@ -8,10 +8,11 @@ const SignUp = () => {
   const [pass, setPass] = useState("");
   //All Data value push submitted
   const [submitted, setSubmitted] = useState([]);
+  let ind = submitted.length
 
   const handleSubmit = (e) => {
     //entered value push submitted
-    submitted.push({ Name: name, Email: email, Password: pass });
+    submitted.push({ Name: name, Email: email, Password: pass, Id: ind });
     // default behaviour change .button click page default.page not refreshin.
     e.preventDefault();
     //convert object to string 
@@ -22,6 +23,7 @@ const SignUp = () => {
     setPass("");
     //update new list
     setSubmitted([...submitted]);
+    
   };
   //SignUp Form End
 
@@ -47,6 +49,7 @@ const SignUp = () => {
           </label>
           <br />
           <input
+            id=""
             type="email"
             placeholder="Enter Email"
             value={email}

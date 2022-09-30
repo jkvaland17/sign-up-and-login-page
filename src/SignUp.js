@@ -65,6 +65,7 @@ const SignUp = () => {
             placeholder="Enter Password"
             value={pass}
             onChange={(e) => setPass(e.target.value)}
+            autoComplete="on"
           ></input>
           <br />
           <button type="submit" onClick={handleSubmit}>

@@ -21,3 +21,13 @@
 .btn:hover {
   transform: translateY(-3px);
 }
+
+.allcenter {
+  margin: auto;
+  width: 30%;
+  border: 3px solid cadetblue;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: aliceblue;
+  margin: 20px 0;
+}

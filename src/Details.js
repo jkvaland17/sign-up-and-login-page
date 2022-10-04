@@ -6,6 +6,7 @@ const Details = () => {
   const [email, setEmail] = useState("");
   const [storageData, setStorageData] = useState([]);
   const [editdata, seteditdata] = useState(false);
+
   //fatch data from url
   let { id } = useParams();
   useEffect(() => {

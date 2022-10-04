@@ -43,14 +43,6 @@ const Details = () => {
   };
   return (
     <div className="center">
-      {/* <h3>
-        Name:
-        <input value={name} onChange={(e) => setName(e.target.value)} />
-      </h3>
-      <h3>
-        Email:
-        <input value={email} onChange={(e) => setEmail(e.target.value)} />
-      </h3> */}
       <div className="abcd">
         <div>
           <h3>

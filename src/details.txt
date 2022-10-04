@@ -52,7 +52,6 @@ const Details = () => {
   const [storageData, setStorageData] = useState("");
   //fatch data from url
   let { id } = useParams();
-  // get data from the SignUp-form
   useEffect(() => {
     // get data from the SignUp-form
     let listData = localStorage.getItem("list");

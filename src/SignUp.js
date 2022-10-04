@@ -14,7 +14,6 @@ const SignUp = () => {
     //entered value push submitted
     submitted.push({ Name: name, Email: email, Password: pass, Id: ind });
     // default behaviour change .button click page default.page not refreshin.
-    e.preventDefault();
     //convert object to string 
     localStorage.setItem("list", JSON.stringify(submitted));
     //After submit button click value erase
@@ -31,7 +30,7 @@ const SignUp = () => {
     <>
       {/* Signup Page Start */}
       <div>
-        <form>
+        <div>
           <h1>Signup pages</h1>
           <label>
             Name<span className="mandetory">*</span>
@@ -74,7 +73,7 @@ const SignUp = () => {
           <h4>
             Back To <NavLink to="/">Login</NavLink>
           </h4>
-        </form>
+        </div>
       </div>
       {/* Signup Page Eng  */}
     </>

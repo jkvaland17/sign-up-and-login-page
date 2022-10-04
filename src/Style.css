@@ -17,6 +17,7 @@
   border-radius: 0.3rem;
   background-color: cadetblue;
   padding: 0.5rem 2rem;
+  margin-right: 1rem;
 }
 .btn:hover {
   transform: translateY(-3px);
@@ -30,4 +31,20 @@
   border-radius: 10px;
   background-color: aliceblue;
   margin: 20px 0;
+}
+
+.btn1 {
+  transition: 0.3s linear;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: cadetblue;
+  padding: 0.5rem 2rem;
+  margin-right: 1rem;
+}
+
+.abcd {
+  display: flex;
+  align-items: center;
+  place-content: space-between;
 }

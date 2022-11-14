@@ -19,23 +19,21 @@ const Login = (props) => {
       //store and convert text into a JavaScript string to object
       let oldData = JSON.parse(listData);
       //entered useremail and userpass filtered oldData
-      let userlogin = oldData.filter((el) => {
+      let userlogin = oldData.filter((el,k) => {
         return el.Email === Useremail && el.Password === Userpass;
       });
-      let id = userlogin.length;
-      console.log(id);
+      let id = userlogin[0].Id;
       if (userlogin.length === 0) {
-        console.log("us",userlogin.length);
         alert("Sorry!, please enter the correct email and password");
       } else {
         alert("you are successfully logged in");
+        //navigate details page
         navigate(`/details/${id}`);
       }
     }
     //after login writed data empty
     setUserEmail("");
     setUserPass("");
-    //navigate details page
   };
   //login Form End
   return (
